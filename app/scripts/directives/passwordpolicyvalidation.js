@@ -28,7 +28,22 @@ angular.module('stormpathIdpApp')
             ['requireLowerCase' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireLowerCase && !(/[a-z]/).test(v);}],
             ['requireUpperCase' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireUpperCase && !(/[A-Z]/).test(v);}],
             ['requireNumeric' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireNumeric && !(/[0-9]/).test(v);}],
-            ['requireDiacritical' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireDiacritical && !(/[\u00C0-\u017F]/).test(v);}]
+            ['requireDiacritical' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireDiacritical && !(/[\u00C0-\u017F]/).test(v);}],
+            ['requireDiversity' , function(){ 
+            	var matchCount = 0;
+            	if ((/[A-Z]/).test(v)) {
+            		matchCount++;
+            	}
+            	if ((/[0-9]/).test(v)) {
+            		matchCount++;
+            	}
+            	if ((/[^a-zA-Z0-9 ]/).test(v)) {
+            		matchCount++;
+            	}
+            	return matchCount<2;
+            	}],
+            ['wordPassword' , function(){ return v.toLowerCase().indexOf("password") > -1;}],
+            ['wordEquilar' , function(){ return v.toLowerCase().indexOf("equilar") > -1;}]
           ];
 
           for(var i=0;i<tests.length;i++){
