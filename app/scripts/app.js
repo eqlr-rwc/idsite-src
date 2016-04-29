@@ -12,10 +12,6 @@
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/register', {
-        templateUrl: 'views/registration.html',
-        controller: 'RegistrationCtrl'
-      })
       .when('/forgot/:retry?', {
         templateUrl: 'views/forgot.html',
         controller: 'ForgotCtrl'

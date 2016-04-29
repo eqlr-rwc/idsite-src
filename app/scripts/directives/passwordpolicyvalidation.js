@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('stormpathIdpApp')
-  .directive('passwordPolicyValidation', function (Stormpath) {
+  .directive('passwordPolicyValidation', function (Stormpath,$routeParams) {
     return {
       restrict: 'A',
       link: function postLink(scope) {
+
         scope.errors = {
           minLength: false,
           maxLength: false,
@@ -21,6 +22,12 @@ angular.module('stormpathIdpApp')
         scope.validate = function(element){
           scope.clearErrors();
           var v = element.val();
+
+          var unTxt = $routeParams.un;
+          var emTxt = $routeParams.em;
+          var username = unTxt == null ? '':unTxt.substring(5);
+          var email = emTxt == null ? '':emTxt.substring(5);
+          var idEmail = email.indexOf('@') > -1 ? email.split('@')[0] : '';
 
           var tests =  [
             ['minLength' , function(){return v.length < Stormpath.idSiteModel.passwordPolicy.minLength;}],
@@ -43,7 +50,9 @@ angular.module('stormpathIdpApp')
             	return matchCount<2;
             	}],
             ['wordPassword' , function(){ return v.toLowerCase().indexOf("password") > -1;}],
-            ['wordEquilar' , function(){ return v.toLowerCase().indexOf("equilar") > -1;}]
+            ['wordEquilar' , function(){ return v.toLowerCase().indexOf("equilar") > -1;}],
+            ['hasUsername' , function(){ return username.length > 0 && v.toLowerCase().indexOf(username.toLowerCase()) > -1;}],
+            ['hasEmail' , function(){ return idEmail.length > 0 && v.toLowerCase().indexOf(idEmail.toLowerCase()) > -1;}]
           ];
 
           for(var i=0;i<tests.length;i++){
