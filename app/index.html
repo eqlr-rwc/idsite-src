@@ -26,6 +26,31 @@
     <script src="bower_components/stormpath.js/dist/stormpath.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			showAdFrame();
+		});
+	
+		$(document).ready(function() {
+			$(window).resize(function() {
+				showAdFrame();
+			});
+		});
+	
+		function showAdFrame() {
+			var frame = document.getElementById('adframe');
+			if (frame) {
+				if (window.outerWidth > 960) {
+					frame.style.display = "block";
+				} else {
+					frame.style.display = "none";
+				}
+			}
+		}
+	</script>
+    
   </head>
   <body ng-app="stormpathIdpApp">
     <script type="text/ng-template" id="views/login.html">
@@ -55,12 +80,16 @@
 
     <div class="container" ng-controller="ErrorCtrl" ng-cloak>
       <div class="logo-container">
-        <img ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
+        <img ng-show="logoUrl" class="logo img-responsive" ng-src="images/Logo.svg"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
-      <div ng-hide="inError" ng-view="">
+      <div ng-hide="inError" ng-view="" align="center">
         <!-- this will be replaced a the view, as determined by the route config in app.js -->
       </div>
+    </div>
+    <div class="footerContainer bottom-margin"  align="center">
+    <label class="footerLbl1">Questions?</label>&nbsp;&nbsp;&nbsp;
+    <label class="footerLbl2">Contact Us</label>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

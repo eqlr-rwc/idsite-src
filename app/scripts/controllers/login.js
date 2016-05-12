@@ -24,6 +24,10 @@ angular.module('stormpathIdpApp')
       if(Stormpath.getProvider('facebook')){
         initFB();
       }
+
+//alert(angular.toJson(Stormpath.client.jwtPayload.app_href));
+//alert(angular.toJson($scope));
+
     });
 
     var googleIsSignedIn = false;

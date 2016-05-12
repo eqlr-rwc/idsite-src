@@ -1,8 +1,8 @@
-<div class="view forgot-view" ng-show="ready">
+<div class="view forgot-view box-size" ng-show="ready">
   <div class="box row">
-    <div class="col-sm-12">
-      <div class="header">
-        <span ng-show="!sent && !retry">Password Reset</span>
+    <div class="fullSize bottom-margin">
+      <div class="fullSize bottom-margin">
+        <span ng-show="!sent && !retry" class="heavy-font">Password Reset</span>
         <span ng-show="retry">Reset link has expired</span>
         <span ng-show="sent">Please check your mail.</span>
 
@@ -49,5 +49,5 @@
       </form>
     </div>
   </div>
-  <a ng-show="!sent" class="to-login" href="#" wd-back-to-login>Back to Log In</a>
+  <a ng-show="!sent" class="to-login top-margin5" href="#" wd-back-to-login>Back to Log In</a>
 </div>

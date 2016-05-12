@@ -33,14 +33,20 @@
 
 
 @boxBorderRadius: 3px;
-@inputHeight: 45px;
+@inputHeight: 44px;
 @gray1: #f6f6f6;
 @baseFontSize: 14px;
-@boxGutter: 30px;
+@boxGutter: 40px;
+@eqlrGreen: #19B193;
+@eqlrGreen2: #1CC09F;
+@footerClr1: #B3DAF1;
+@eqlrFont1: "AvenirLTCom-Medium";
+@eqlrFont2: "AvenirLTCom-Heavy";
 
 html,body
 {
   height: 100%;
+  background-color: #323232;
 
   @media (max-width: @screen-xs-max){
     padding: 0 4px;
@@ -48,7 +54,7 @@ html,body
 }
 
 body,div,p,a,label {
-  font-family: "Open Sans";
+  font-family: @eqlrFont1;
   font-size: @baseFontSize;
   font-weight: 400;
   color: #484848;
@@ -63,25 +69,27 @@ p{
 }
 
 .container{
-  max-width: 620px;
+  max-width: 875px;
 }
 
 .logo-container{
-  margin: 34px auto 25px auto;
+  margin: 55px auto 55px auto;
   display: block;
 }
 .logo{
   margin: 0 auto;
   display: block;
+  width: 240px;
 }
 
 .btn-sp-green{
   height: 45px;
-  line-height: 45px/2;
+  line-height: 44px/2;
   padding: 0 40px;
   color: #fff;
-  font-size: 17px;
-  .flatTwoColorGradient(#42c41a,#2dbd00,#43cd1a,#2ec700);
+  font-size: 14px;
+  font-family: @eqlrFont2;
+  .flatTwoColorGradient(@eqlrGreen,@eqlrGreen,@eqlrGreen2,@eqlrGreen2);
 }
 
 .btn-saml{
@@ -175,7 +183,7 @@ p{
 }
 
 .form-control{
-  font-size: 15px;
+  font-size: 14px;
   &::placeholder {
     color: #aaadb0;
   }
@@ -186,6 +194,9 @@ p{
 }
 
 .view{
+  
+  margin: auto;  
+  background-color: #fff;
 
   .header{
     & , & a{
@@ -204,15 +215,15 @@ p{
     &.forgot,
     &.to-login{
       float:right;
-      padding: 17px 0;
-      font-size: 13px;
+      padding: 0;
+      font-size: 12px;
+      color: @eqlrGreen;
     }
   }
   form{
     button{
       display: block;
       float: right;
-      margin-bottom: 25px;
     }
     label{
       height: @inputHeight;
@@ -225,7 +236,8 @@ p{
   box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.1);
   border:1px solid #cacaca;
   border-radius: 3px;
-  padding: 0 @boxGutter;
+  padding: @boxGutter;
+  margin: 0px;
 }
 .sp-form{
   .has-error{
@@ -273,11 +285,14 @@ p{
   }
 }
 
+.box-size{
+  max-width: 600px;
+}
+
 .login-view{
+  width: 411px;
 
   & .box{
-    background-color: @gray1;
-    padding: 0;
   }
 
   label{
@@ -289,7 +304,7 @@ p{
   .email-password-area{
 
     @media (min-width: @screen-xs-max){
-      padding: 0 @boxGutter;
+      padding: 0;
     }
 
     background-color: white;
@@ -305,12 +320,12 @@ p{
 
     input[type='checkbox']{
       visibility: hidden;
-      @checkboxSize:16px;
+      @checkboxSize:18px;
       &  + label {
         position: relative;
         padding-left: @checkboxSize / 2;
         line-height: @checkboxSize;
-        font-size: 13px;
+        font-size: 12px;
         &:after{
           position: absolute;
           left: -@checkboxSize;
@@ -352,7 +367,6 @@ p{
         border-top-right-radius: @boxBorderRadius;
         border-bottom-right-radius: @boxBorderRadius;
         @media (min-width: @screen-xs-max){
-          padding: 0 50px;
           // does not have the social area to the right, it not mobile
           .group-email,
           .group-password{
@@ -364,35 +378,84 @@ p{
         }
       }
     }
-
-
-
-  }
-  .provider-area{
-    border-top-right-radius: @boxBorderRadius;
-    border-bottom-right-radius: @boxBorderRadius;
-    padding: 0 20px;
-    .header{
-      margin-bottom: -6px;
-    }
-    @media (max-width: @screen-xs-max) {
-      .header{
-        padding: 0px;
-      }
-    }
-    position: relative;
-    padding-bottom: 20px;
-
-    background-color: @gray1;
-
-    button{
-      display: block;
-      width: 100%;
-      margin-bottom: 15px;
-    }
   }
 }
 
 .alert{
   word-wrap: break-word;
 }
+
+.fullSize{
+  width: 100%;
+}
+
+.bottom-margin{
+  margin-bottom: 30px;
+}
+
+.bottom-margin5{
+  margin-bottom: 5px;
+}
+
+.top-margin5{
+  margin-top: 5px;
+}
+
+.align-center{
+  margin: auto;
+}
+
+.adframe{
+  width: 433px;
+  height: 328px;
+  margin: 0px;
+  margin-left: 40px;
+  display: none;
+  border: 0px;
+}
+
+.heavy-font{
+  font-size: 14px;
+  font-family: @eqlrFont2;
+}
+
+.footerContainer{
+  margin-top: 44px;
+}
+
+.footerLbl1{
+  font-family: @eqlrFont1;
+  color: @footerClr1;
+  font-size: 13px;
+}
+
+.footerLbl2{
+  font-family: @eqlrFont1;
+  color: #fff;
+  font-size: 13px;
+}
+
+
+/*--------------------------------------------FONTS----------------------------------------------------*/
+
+@font-face {
+  font-family: 'AvenirLTCom-Heavy';
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Heavy.eot');
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Heavy.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AvenirLTCom-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirLTCom-Light';
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Light.eot');
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AvenirLTCom-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AvenirLTCom-Medium';
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Medium.eot');
+  src: url('http://www.equilar.com/fonts/AvenirLTCom-Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/AvenirLTCom-Medium.ttf') format('truetype');
+}
+
