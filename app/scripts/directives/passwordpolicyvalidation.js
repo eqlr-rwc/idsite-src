@@ -28,14 +28,16 @@ angular.module('stormpathIdpApp')
           var username = unTxt == null ? '':unTxt.substring(5);
           var email = emTxt == null ? '':emTxt.substring(5);
           var idEmail = email.indexOf('@') > -1 ? email.split('@')[0] : '';
+          
+          //alert(angular.toJson(Stormpath));
 
           var tests =  [
-            ['minLength' , function(){return v.length < Stormpath.idSiteModel.passwordPolicy.minLength;}],
-            ['maxLength' , function(){ return v.length > Stormpath.idSiteModel.passwordPolicy.maxLength;}],
-            ['requireLowerCase' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireLowerCase && !(/[a-z]/).test(v);}],
-            ['requireUpperCase' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireUpperCase && !(/[A-Z]/).test(v);}],
-            ['requireNumeric' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireNumeric && !(/[0-9]/).test(v);}],
-            ['requireDiacritical' , function(){ return Stormpath.idSiteModel.passwordPolicy.requireDiacritical && !(/[\u00C0-\u017F]/).test(v);}],
+            ['minLength' , function(){return v.length < 8;}],
+            ['maxLength' , function(){ return false && Stormpath.idSiteModel.passwordPolicy && v.length > Stormpath.idSiteModel.passwordPolicy.maxLength;}],
+            ['requireLowerCase' , function(){ return false && Stormpath.idSiteModel.passwordPolicy && !(/[a-z]/).test(v);}],
+            ['requireUpperCase' , function(){ return false && Stormpath.idSiteModel.passwordPolicy && !(/[A-Z]/).test(v);}],
+            ['requireNumeric' , function(){ return false && Stormpath.idSiteModel.passwordPolicy && !(/[0-9]/).test(v);}],
+            ['requireDiacritical' , function(){ return false &&  Stormpath.idSiteModel.passwordPolicy && !(/[\u00C0-\u017F]/).test(v);}],
             ['requireDiversity' , function(){ 
             	var matchCount = 0;
             	if ((/[A-Z]/).test(v)) {
