@@ -30,17 +30,17 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-			showAdFrame();
+			showInfoFrame();
 		});
 	
 		$(document).ready(function() {
 			$(window).resize(function() {
-				showAdFrame();
+				showInfoFrame();
 			});
 		});
 	
-		function showAdFrame() {
-			var frame = document.getElementById('adframe');
+		function showInfoFrame() {
+			var frame = document.getElementById('infoFrame');
 			if (frame) {
 				if (window.outerWidth > 960) {
 					frame.style.display = "block";
