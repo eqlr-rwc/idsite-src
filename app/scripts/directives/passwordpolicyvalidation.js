@@ -29,8 +29,6 @@ angular.module('stormpathIdpApp')
           var email = emTxt == null ? '':emTxt.substring(5);
           var idEmail = email.indexOf('@') > -1 ? email.split('@')[0] : '';
           
-          //alert(angular.toJson(Stormpath));
-
           var tests =  [
             ['minLength' , function(){return v.length < 8;}],
             ['maxLength' , function(){ return false && Stormpath.idSiteModel.passwordPolicy && v.length > Stormpath.idSiteModel.passwordPolicy.maxLength;}],
