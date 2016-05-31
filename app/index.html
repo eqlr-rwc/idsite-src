@@ -107,7 +107,7 @@
 
     <div class="container" ng-controller="ErrorCtrl" ng-cloak>
       <div class="logo-container">
-        <img ng-show="logoUrl" class="logo img-responsive" ng-src="images/Logo.svg"/>
+        <img ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
       <div ng-hide="inError" ng-view="" align="center">
@@ -139,6 +139,7 @@
 
     <!-- build:js({.tmp,app}) scripts/app.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/components.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/forgot.js"></script>
     <script src="scripts/controllers/reset.js"></script>

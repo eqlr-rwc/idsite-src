@@ -21,6 +21,7 @@ angular.module('stormpathIdpApp')
       $scope.providers = Stormpath.providers;
       $scope.ready = true;
       $scope.hasProviders = $scope.providers.length > 0;
+      
       if(Stormpath.getProvider('facebook')){
         initFB();
       }

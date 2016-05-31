@@ -44,13 +44,31 @@ angular.module('stormpathIdpApp')
       client = self.client = new stormpath.Client(function(err,idSiteModel){
         $rootScope.$apply(function(){
           if(err){
+        	init.reject(err);
             showError(err);
-            init.reject(err);
           }else{
             var m = idSiteModel;
             self.idSiteModel = m;
             self.providers = self.providers.concat(m.providers);
-            $rootScope.logoUrl = m.logoUrl;
+            //$rootScope.logoUrl = m.logoUrl;
+            
+            var url = null;
+            try {
+	          var appCode = null;
+	          $.each(self.client.jwtPayload.scope.application, function(key, value) {
+	        	if (typeof key !== "function") {
+	        	  appCode=key;
+	        	}
+	          });
+	          
+	          url = getAppLogoUrl(appCode);
+            } catch(exptn) {}
+            
+            if (!url || url === '') {
+              url = 'images/logo.svg';
+            }
+            $rootScope.logoUrl = url;
+  		  
             init.resolve();
           }
         });

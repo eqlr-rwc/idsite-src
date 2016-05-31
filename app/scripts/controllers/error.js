@@ -1,26 +1,51 @@
 'use strict';
+var loginPage = 'http://www.equilar.com/login';
 
 angular.module('stormpathIdpApp')
   .controller('ErrorCtrl', function ($scope,$location,Stormpath) {
     $scope.errors = Stormpath.errors;
     $scope.inError = false;
     $scope.$watchCollection('errors',function(){
-      $scope.inError = $scope.errors.length > 0;
-      if($scope.inError) {
-    	  var redirect = false;
-
+      var hasError = $scope.errors.length > 0;
+      if(hasError) {
+    	  var redirectNow = false;
+    	  
     	  if($location.search().jwt == null) {
-    		  redirect = true;
+    		  redirectNow = true;
     	  }
     	  if(Stormpath.errors[0] == 'JWT not found as url query parameter.') {
-    		  redirect = true;
+    		  redirectNow = true;
     	  }
     	  if(Stormpath.errors[0] == 'The JWT used to initialized the client was rejected.') {
-    		  redirect = true;
+    		  redirectNow = true;
     	  }
-    	  if(redirect) {
-    		  window.location.href = 'http://www.equilar.com/login.html';
+    	  
+    	  if(redirectNow) {
+    		  var code = null;
+
+              try {
+                $.each(Stormpath.client.jwtPayload.scope.application, function(key, value) {
+    	          if (typeof key !== "function") {
+            	    code=key;
+    	          }
+                });
+              } catch(exptn) {}
+              
+              var url = getAppUrl(code);
+              if (!url) {
+            	  url = loginPage;
+              }
+    		  window.location.href = url;
+    		  return;
+    	  } else {
+    		  window.setTimeout(redirectToLoginPage, 7000);
     	  }
       }
+
+      $scope.inError = hasError;
     });
   });
+
+function redirectToLoginPage() {
+	window.location.href = loginPage;
+}
