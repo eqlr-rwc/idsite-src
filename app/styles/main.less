@@ -40,6 +40,7 @@
 @eqlrGreen: #19B193;
 @eqlrGreen2: #1CC09F;
 @footerClr1: #B3DAF1;
+@HeaderClr1: #B0B0B0;
 @eqlrFont1: "AvenirLTCom-Medium";
 @eqlrFont2: "AvenirLTCom-Heavy";
 
@@ -251,7 +252,7 @@ p{
       border-color: @errorColor;
     }
   }
-
+  
   .form-group{
     margin-bottom: 21px;
 
@@ -287,6 +288,26 @@ p{
 
 .box-size{
   max-width: 600px;
+}
+
+.custom-header{
+    background-color: @HeaderClr1;
+    margin: -41px;
+    margin-bottom: 25px;
+    padding: 20px;
+    color: white;
+  }
+
+.forgot-view{
+  width: 411px;
+  
+  & .btn-forgot{
+    margin-top: 12px;
+  }
+  
+  & .info-text{
+    line-height: 16px;
+  }
 }
 
 .login-view{

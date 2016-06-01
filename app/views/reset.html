@@ -1,10 +1,9 @@
 <div class="view reset-view box-size" ng-show="status!=='loading'">
   <div class="box row">
     <div class="fullSize bottom-margin">
-      <div class="header">
-        <span ng-show="status=='verified'"  class="heavy-font">Password Reset</span>
+      <div class="custom-header">
+        <span ng-show="status!='failed'"  class="heavy-font">Password Reset</span>
         <span ng-show="status=='failed'">Sorry! Something went wrong.</span>
-        <span ng-show="status=='success'">You have successfully changed your password.</span>
       </div>
       <div ng-show="status=='failed'">
         <p>
@@ -14,6 +13,7 @@
         <p>&nbsp;</p>
       </div>
       <div wd-success ng-show="status==='success'">
+        <span ng-show="status=='success'">You have successfully changed your password.</span>
         <p>
           <span>You may now </span>
           <a href="#/">log in</a>
