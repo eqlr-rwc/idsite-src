@@ -5,9 +5,9 @@
     componentInfo['46yW5Us4'] = ['BEUA STAGE', 'https://stage-beua.equilar.com', ''];
     componentInfo['5gIMTdT1'] = ['BEUA DEMO', 'https://demo-beua.equilar.com', ''];
     componentInfo['4NcuZtp9'] = ['BEUA PROD', 'https://beua.equilar.com', ''];
-    componentInfo['4aT6Puas'] = ['BoardEdge QA', 'https://qa-aws-bsp.equilar.com', 'images/logo-boardedge.svg'];
-    componentInfo['5741xJ1r'] = ['BoardEdge STAGE', 'https://stage-boardedge.equilar.com', 'images/logo-boardedge.svg'];
-    componentInfo['2oq3Aswp'] = ['BoardEdge PROD', 'https://boardedge.equilar.com', 'images/logo-boardedge.svg'];
+    componentInfo['4aT6Puas'] = ['BoardEdge QA', 'https://qa-aws-bsp.equilar.com', 'images/logo-boardedge.png'];
+    componentInfo['5741xJ1r'] = ['BoardEdge STAGE', 'https://stage-boardedge.equilar.com', 'images/logo-boardedge.png'];
+    componentInfo['2oq3Aswp'] = ['BoardEdge PROD', 'https://boardedge.equilar.com', 'images/logo-boardedge.png'];
     componentInfo['7Yiify8W'] = ['Insight QA', 'https://qa-insight.equilar.com', 'images/logo-insight.svg'];
     componentInfo['3ocB7vZh'] = ['Insight STAGE', 'https://stage-insight.equilar.com', 'images/logo-insight.svg'];
     componentInfo['45rOONNT'] = ['Insight DEMO', 'https://demo-insight.equilar.com', 'images/logo-insight.svg'];
