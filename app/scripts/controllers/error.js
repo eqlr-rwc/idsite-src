@@ -23,7 +23,7 @@ angular.module('stormpathIdpApp')
     	  }
     	  var insightCustomRedirect = false;
     	  if(Stormpath.errors[0] == 'Internal XMLHttpRequest Error') {
-    		  Stormpath.errors[0] = "It looks like 'enterprise.stormpath.io' is blocked, please check your settings.";
+    		  Stormpath.errors[0] = "It looks like 'enterprise.stormpath.io' is blocked, please contact your network support team.";
     		  insightCustomRedirect = true;
     	  }
 
