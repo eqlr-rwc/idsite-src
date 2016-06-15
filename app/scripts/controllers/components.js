@@ -16,6 +16,23 @@
     componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg'];
     componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg'];
     
+    function getInsightCustomRedirectUrl(code) {
+    	if (!code) {
+    		return null;
+    	}
+    	var key = code.substring(0, 8);
+    	
+    	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu') {
+    		var urlSuffix = '/app/login/login2.jsp';
+    		var appUrl = getAppUrl(code);
+    		if (appUrl) {
+    			return appUrl + urlSuffix;
+    		}
+    	}
+
+		return null;
+    }
+    
     function getAppName(code) {
     	return getAppData(code, 0);
     }
