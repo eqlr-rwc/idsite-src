@@ -45,6 +45,7 @@ angular.module('stormpathIdpApp')
     		  window.location.href = url;
     		  return;
     	  }
+    	  
     	  if (insightCustomRedirect) {
     		  var url = getInsightCustomRedirectUrl(code);
               if (url) {
@@ -54,7 +55,9 @@ angular.module('stormpathIdpApp')
               }
     	  }
 
-    	  window.setTimeout(function() {redirectToPage(toRedirectPage);}, 7000);
+    	  if (!$scope.customRedirect) {
+    	  	window.setTimeout(function() {redirectToPage(toRedirectPage);}, 7000);
+      	  }
       }
 
       $scope.inError = hasError;
