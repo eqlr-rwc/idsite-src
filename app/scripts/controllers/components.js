@@ -1,20 +1,20 @@
 
 	var componentInfo = [];
- // componentInfo[ 'HASH'] = ['NAME', 'URL', 'LOGO' ],
-    componentInfo['3luD8Rvh'] = ['BEUA QA', 'https://qa-beua.equilar.com', ''];
-    componentInfo['46yW5Us4'] = ['BEUA STAGE', 'https://stage-beua.equilar.com', ''];
-    componentInfo['5gIMTdT1'] = ['BEUA DEMO', 'https://demo-beua.equilar.com', ''];
-    componentInfo['4NcuZtp9'] = ['BEUA PROD', 'https://beua.equilar.com', ''];
-    componentInfo['4aT6Puas'] = ['BoardEdge QA', 'https://qa-aws-bsp.equilar.com', 'images/logo-boardedge.png'];
-    componentInfo['5741xJ1r'] = ['BoardEdge STAGE', 'https://stage-boardedge.equilar.com', 'images/logo-boardedge.png'];
-    componentInfo['2oq3Aswp'] = ['BoardEdge PROD', 'https://boardedge.equilar.com', 'images/logo-boardedge.png'];
-    componentInfo['7Yiify8W'] = ['Insight QA', 'https://qa-insight.equilar.com', 'images/logo-insight.svg'];
-    componentInfo['3ocB7vZh'] = ['Insight STAGE', 'https://stage-insight.equilar.com', 'images/logo-insight.svg'];
-    componentInfo['45rOONNT'] = ['Insight DEMO', 'https://demo-insight.equilar.com', 'images/logo-insight.svg'];
-    componentInfo['3ZF6HrYu'] = ['Insight PROD', 'https://insight.equilar.com', 'images/logo-insight.svg'];
-    componentInfo['1QNUk4n1'] = ['Survey QA', 'https://qa-survey.equilar.com', 'images/logo-survey.svg'];
-    componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg'];
-    componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg'];
+ // componentInfo[ 'HASH'] = ['NAME', 'URL', 'LOGO', 'INFO_FRAME' ],
+    componentInfo['3luD8Rvh'] = ['BEUA QA', 'https://qa-beua.equilar.com', '', ''];
+    componentInfo['46yW5Us4'] = ['BEUA STAGE', 'https://stage-beua.equilar.com', '', ''];
+    componentInfo['5gIMTdT1'] = ['BEUA DEMO', 'https://demo-beua.equilar.com', '', ''];
+    componentInfo['4NcuZtp9'] = ['BEUA PROD', 'https://beua.equilar.com', '', ''];
+    componentInfo['4aT6Puas'] = ['BoardEdge QA', 'https://qa-aws-bsp.equilar.com', 'images/logo-boardedge.png', 'https://www.equilar.com/product-login-iframes/boardedge'];
+    componentInfo['5741xJ1r'] = ['BoardEdge STAGE', 'https://stage-boardedge.equilar.com', 'images/logo-boardedge.png', 'https://www.equilar.com/product-login-iframes/boardedge'];
+    componentInfo['2oq3Aswp'] = ['BoardEdge PROD', 'https://boardedge.equilar.com', 'images/logo-boardedge.png', 'https://www.equilar.com/product-login-iframes/boardedge'];
+    componentInfo['7Yiify8W'] = ['Insight QA', 'https://qa-insight.equilar.com', 'images/logo-insight.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['3ocB7vZh'] = ['Insight STAGE', 'https://stage-insight.equilar.com', 'images/logo-insight.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['45rOONNT'] = ['Insight DEMO', 'https://demo-insight.equilar.com', 'images/logo-insight.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['3ZF6HrYu'] = ['Insight PROD', 'https://insight.equilar.com', 'images/logo-insight.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['1QNUk4n1'] = ['Survey QA', 'https://qa-survey.equilar.com', 'images/logo-survey.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg', 'https://www.equilar.com/product-login-iframes/insight'];
+    componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg', 'https://www.equilar.com/product-login-iframes/insight'];
     
     function getInsightCustomRedirectUrl(code) {
     	if (!code) {
@@ -43,6 +43,10 @@
     
     function getAppLogoUrl(code) {
     	return getAppData(code, 2);
+    }
+    
+    function getInfoFrameUrl(code) {
+    	return getAppData(code, 3);
     }
     
     function getAppData(code, index) {

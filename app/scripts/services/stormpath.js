@@ -68,6 +68,12 @@ angular.module('stormpathIdpApp')
               url = 'images/logo.svg';
             }
             $rootScope.logoUrl = url;
+            
+            var infoFrameUrl = getInfoFrameUrl(appCode);
+            if (!infoFrameUrl) {
+            	infoFrameUrl = '';
+            }
+            $rootScope.infoFrameUrl = infoFrameUrl;
   		  
             init.resolve();
           }
