@@ -28,6 +28,10 @@
         templateUrl: 'views/unverified.html',
         controller: 'UnverifiedCtrl'
       })
+      .when('/faq', {
+          templateUrl: 'views/faq.html',
+          controller: 'FaqCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });

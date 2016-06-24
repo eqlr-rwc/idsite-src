@@ -6,7 +6,7 @@
 <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Equilar | Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
@@ -112,6 +112,9 @@
     <script type="text/ng-template" id="views/password-error-messages.html">
       include "views/password-error-messages.html"
     </script>
+    <script type="text/ng-template" id="views/faq.html">
+      include "views/faq.html"
+    </script>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -126,7 +129,7 @@
       </div>
     </div>
     <div class="footerContainer bottom-margin"  align="center">
-    <label class="footerLbl1">Questions?</label>&nbsp;&nbsp;&nbsp;
+    <a class="footerLbl1" href="#faq">Frequently Asked Questions</a>&nbsp;&nbsp;&nbsp;
     <a href="http://www.equilar.com" class="footerLbl2">Contact Us</a>
     </div>
 
@@ -156,6 +159,7 @@
     <script src="scripts/controllers/reset.js"></script>
     <script src="scripts/controllers/verify.js"></script>
     <script src="scripts/controllers/error.js"></script>
+    <script src="scripts/controllers/faq.js"></script>
     <script src="scripts/services/stormpath.js"></script>
     <script src="scripts/directives/formgroup.js"></script>
     <script src="scripts/directives/formcontrol.js"></script>
