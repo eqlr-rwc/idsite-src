@@ -69,11 +69,11 @@ angular.module('stormpathIdpApp')
             }
             $rootScope.logoUrl = url;
             
-            var infoFrameUrl = getInfoFrameUrl(appCode);
-            if (!infoFrameUrl) {
-            	infoFrameUrl = '';
+            var frameType = getInfoFrameType(appCode);
+            if (!frameType) {
+            	frameType = '';
             }
-            $rootScope.infoFrameUrl = infoFrameUrl;
+            $rootScope.infoFrameType = frameType;
   		  
             init.resolve();
           }
