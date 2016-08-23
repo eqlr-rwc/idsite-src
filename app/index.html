@@ -55,6 +55,9 @@
 		function setInfoFrame() {
 			var frameType = document.getElementById('frameType').innerHTML;
 			var frame = document.getElementById('infoFrame');
+			if (!frame) {
+				return;
+			}
 			
 			var frameSrc = 'https://www.equilar.com/product-login-iframes/boardedge';
 			

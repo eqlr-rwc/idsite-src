@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('stormpathIdpApp')
-  .controller('LoginCtrl', function ($scope,Stormpath,$window) {
+  .controller('LoginCtrl', function ($scope,Stormpath,$window,$location,$timeout) {
     $scope.ready = false;
     $scope.canRegister = true;
     $scope.errors = {
@@ -25,7 +25,24 @@ angular.module('stormpathIdpApp')
       if(Stormpath.getProvider('facebook')){
         initFB();
       }
+      
+      //Start page reload timer
+      $timeout( function () { tryReload(); }, 300000);
     });
+    
+    function tryReload(){
+    	var url = $scope.loginPageUrl;
+    	var path = $location.path();
+    	
+    	if (!url || url === '#' || url === '#/') {
+    		return;
+    	}
+    	if ('/' !== path) {
+    		return;
+    	}
+
+    	$window.location.href=url;
+    }
 
     var googleIsSignedIn = false;
 

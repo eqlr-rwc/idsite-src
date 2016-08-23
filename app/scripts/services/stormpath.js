@@ -33,7 +33,6 @@ angular.module('stormpathIdpApp')
       $window.location = serviceProviderCallbackUrl;
     }
 
-
     function initialize(){
       if(ieMatch && ieMatch[1]){
         if(parseInt(ieMatch[1],10)<10){
@@ -74,6 +73,13 @@ angular.module('stormpathIdpApp')
             	frameType = '';
             }
             $rootScope.infoFrameType = frameType;
+            
+            var loginPageUrl = getAppUrl(appCode);
+            if (!loginPageUrl) {
+            	// use stormpath's default login view.
+            	loginPageUrl = '#/';
+            }
+            $rootScope.loginPageUrl = loginPageUrl;
   		  
             init.resolve();
           }

@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="alert alert-danger" ng-show="unknownError">
-          <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+          <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
           <br/>
           <br/>
           <p>{{unknownError}}</p>
@@ -35,5 +35,5 @@
       </form>
     </div>
   </div>
-  <a ng-show="!sent" class="to-login top-margin5" href="#" wd-back-to-login>Back to Log In</a>
+  <a ng-show="!sent" class="to-login top-margin5" href="#" ng-href="{{loginPageUrl}}" wd-back-to-login>Back to Log In</a>
 </div>
