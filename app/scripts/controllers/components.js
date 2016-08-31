@@ -16,13 +16,23 @@
     componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     
+    //O2P applications
+    componentInfo['70MnQP9m'] = ['BEUA QA-O2P', 'https://qa-beua-o2p.equilar.com', '', ''];
+    componentInfo['d92MibgI'] = ['BEUA STAGE-O2P', 'https://stage-o2p-beua.equilar.com', '', ''];
+    componentInfo['3GWoXKms'] = ['BEUA PROD-O2P', 'https://prod-o2p-beua.equilar.com', '', ''];
+    componentInfo['2jNwY7BP'] = ['Insight QA-O2P', 'https://qa-insight-o2p.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
+    componentInfo['18yGfmRP'] = ['Insight STAGE-O2P', 'https://stage-o2p-insight.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
+    componentInfo['3UUCOwvi'] = ['Insight PROD-O2P', 'https://prod-o2p-insight-ps.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
+    
     function getInsightCustomRedirectUrl(code) {
     	if (!code) {
     		return null;
     	}
     	var key = code.substring(0, 8);
     	
-    	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu') {
+    	//For insight
+    	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu'
+    		 || key === '2jNwY7BP' || key === '18yGfmRP' || key === '3UUCOwvi') {
     		var urlSuffix = '/app/login/login2.jsp';
     		var appUrl = getAppUrl(code);
     		if (appUrl) {
