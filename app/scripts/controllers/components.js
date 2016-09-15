@@ -3,7 +3,6 @@
  // componentInfo[ 'HASH'] = ['NAME', 'URL', 'LOGO', 'INFO_FRAME' ],
     componentInfo['3luD8Rvh'] = ['BEUA QA', 'https://qa-beua.equilar.com', '', ''];
     componentInfo['46yW5Us4'] = ['BEUA STAGE', 'https://stage-beua.equilar.com', '', ''];
-    componentInfo['5gIMTdT1'] = ['BEUA DEMO', 'https://demo-beua.equilar.com', '', ''];
     componentInfo['4NcuZtp9'] = ['BEUA PROD', 'https://beua.equilar.com', '', ''];
     componentInfo['4aT6Puas'] = ['BoardEdge QA', 'https://qa-aws-bsp.equilar.com', 'images/logo-boardedge.png', 'boardedge-frame'];
     componentInfo['5741xJ1r'] = ['BoardEdge STAGE', 'https://stage-boardedge.equilar.com', 'images/logo-boardedge.png', 'boardedge-frame'];
@@ -15,14 +14,6 @@
     componentInfo['1QNUk4n1'] = ['Survey QA', 'https://qa-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
-    
-    //O2P applications
-    componentInfo['70MnQP9m'] = ['BEUA QA-O2P', 'https://qa-beua-o2p.equilar.com', '', ''];
-    componentInfo['d92MibgI'] = ['BEUA STAGE-O2P', 'https://stage-o2p-beua.equilar.com', '', ''];
-    componentInfo['3GWoXKms'] = ['BEUA PROD-O2P', 'https://prod-o2p-beua.equilar.com', '', ''];
-    componentInfo['2jNwY7BP'] = ['Insight QA-O2P', 'https://qa-insight-o2p.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
-    componentInfo['18yGfmRP'] = ['Insight STAGE-O2P', 'https://stage-o2p-insight.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
-    componentInfo['3UUCOwvi'] = ['Insight PROD-O2P', 'https://prod-o2p-insight-ps.equilar.com', 'images/logo-insight.svg', 'insight-frame'];
     
     function getInsightCustomRedirectUrl(code) {
     	if (!code) {
