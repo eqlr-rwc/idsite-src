@@ -22,8 +22,7 @@
     	var key = code.substring(0, 8);
     	
     	//For insight
-    	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu'
-    		 || key === '2jNwY7BP' || key === '18yGfmRP' || key === '3UUCOwvi') {
+    	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu') {
     		var urlSuffix = '/app/login/login2.jsp';
     		var appUrl = getAppUrl(code);
     		if (appUrl) {
