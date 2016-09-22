@@ -21,10 +21,10 @@ angular.module('stormpathIdpApp')
     	  if(Stormpath.errors[0] == 'The JWT used to initialized the client was rejected.') {
     		  redirectNow = true;
     	  }
-    	  var insightCustomRedirect = false;
+    	  var tryCustomLoginRedirect = false;
     	  if(Stormpath.errors[0] == 'Internal XMLHttpRequest Error') {
     		  Stormpath.errors[0] = "It looks like 'enterprise.stormpath.io' is blocked, please contact your network support team.";
-    		  insightCustomRedirect = true;
+    		  tryCustomLoginRedirect = true;
     	  }
 
 		  var code = null;
@@ -46,8 +46,8 @@ angular.module('stormpathIdpApp')
     		  return;
     	  }
     	  
-    	  if (insightCustomRedirect) {
-    		  var url = getInsightCustomRedirectUrl(code);
+    	  if (tryCustomLoginRedirect) {
+    		  var url = getCustomLoginRedirectUrl(code);
               if (url) {
             	  toRedirectPage = url;
             	  $scope.toRedirectPage = url;

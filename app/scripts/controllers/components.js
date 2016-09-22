@@ -15,7 +15,7 @@
     componentInfo['1iMAt9oB'] = ['Survey STAGE', 'https://stage-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1vjiV2cZ'] = ['Survey PROD', 'https://survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     
-    function getInsightCustomRedirectUrl(code) {
+    function getCustomLoginRedirectUrl(code) {
     	if (!code) {
     		return null;
     	}
@@ -23,16 +23,27 @@
     	
     	//For insight
     	if (key === '7Yiify8W' || key === '3ocB7vZh' || key === '45rOONNT' || key === '3ZF6HrYu') {
-    		var urlSuffix = '/app/login/login2.jsp';
-    		var appUrl = getAppUrl(code);
-    		if (appUrl) {
-    			return appUrl + urlSuffix;
-    		}
+    		return appendSuffixToUrl(code, '/app/login/login2.jsp');
+    	}
+    	
+    	//For BoardEdge
+    	if (key === '4aT6Puas'
+    		//|| key === '5741xJ1r' || key === '2oq3Aswp'
+    			) {
+    		return appendSuffixToUrl(code, '/#/login2');
     	}
 
 		return null;
     }
-    
+
+    function appendSuffixToUrl(code, urlSuffix) {
+    	var appUrl = getAppUrl(code);
+		if (appUrl) {
+			return appUrl + urlSuffix;
+		}
+		return null;
+    }
+
     function getAppName(code) {
     	return getAppData(code, 0);
     }
