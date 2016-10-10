@@ -26,6 +26,12 @@
     		return appendSuffixToUrl(code, '/app/login/login2.jsp');
     	}
     	
+    	//For Survey
+    	if (key === '1QNUk4n1') {
+    		// || key === '1iMAt9oB' || key === '1vjiV2cZ'
+    		return appendSuffixToUrl(code, '/survey/login/login2.jsp');
+    	}
+    	
     	//For BoardEdge
     	if (key === '4aT6Puas'
     		//|| key === '5741xJ1r' || key === '2oq3Aswp'
