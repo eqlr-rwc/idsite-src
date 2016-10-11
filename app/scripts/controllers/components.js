@@ -27,8 +27,7 @@
     	}
     	
     	//For Survey
-    	if (key === '1QNUk4n1') {
-    		// || key === '1iMAt9oB' || key === '1vjiV2cZ'
+    	if (key === '1QNUk4n1' || key === '1iMAt9oB' || key === '1vjiV2cZ') {
     		return appendSuffixToUrl(code, '/survey/login/login2.jsp');
     	}
     	
