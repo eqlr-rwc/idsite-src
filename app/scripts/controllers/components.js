@@ -32,9 +32,7 @@
     	}
     	
     	//For BoardEdge
-    	if (key === '4aT6Puas'
-    		//|| key === '5741xJ1r' || key === '2oq3Aswp'
-    			) {
+    	if (key === '4aT6Puas' || key === '5741xJ1r' || key === '2oq3Aswp') {
     		return appendSuffixToUrl(code, '/#/login2');
     	}
 
