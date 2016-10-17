@@ -50,23 +50,31 @@ angular.module('stormpathIdpApp')
             self.idSiteModel = m;
             self.providers = self.providers.concat(m.providers);
             //$rootScope.logoUrl = m.logoUrl;
-            
-            var url = null;
+
+	        var appCode = null;
+            var logoImgUrl = null;
+            var alternateLoginUrl = null;
             try {
-	          var appCode = null;
 	          $.each(self.client.jwtPayload.scope.application, function(key, value) {
 	        	if (typeof key !== "function") {
 	        	  appCode=key;
 	        	}
 	          });
 	          
-	          url = getAppLogoUrl(appCode);
+	          logoImgUrl = getAppLogoUrl(appCode);
+	          alternateLoginUrl = getCustomLoginRedirectUrl(appCode);
             } catch(exptn) {}
             
-            if (!url || url === '') {
-              url = 'images/logo.svg';
+            if (!logoImgUrl || logoImgUrl === '') {
+            	logoImgUrl = 'images/logo.svg';
             }
-            $rootScope.logoUrl = url;
+            $rootScope.logoUrl = logoImgUrl;
+            
+            if (!alternateLoginUrl || alternateLoginUrl === '') {
+            	// Use insight as default...
+            	alternateLoginUrl = 'https://insight.equilar.com/app/login/login2.jsp';
+            }
+            $rootScope.alternateLoginUrl = alternateLoginUrl;
             
             var frameType = getInfoFrameType(appCode);
             if (!frameType) {
