@@ -54,15 +54,17 @@ angular.module('stormpathIdpApp')
 	        var appCode = null;
             var logoImgUrl = null;
             var alternateLoginUrl = null;
+            var forgotPwdUrl = null;
             try {
-	          $.each(self.client.jwtPayload.scope.application, function(key, value) {
-	        	if (typeof key !== "function") {
-	        	  appCode=key;
-	        	}
-	          });
+	            $.each(self.client.jwtPayload.scope.application, function(key, value) {
+	        	    if (typeof key !== "function") {
+	        	      appCode=key;
+	        	    }
+	            });
 	          
-	          logoImgUrl = getAppLogoUrl(appCode);
-	          alternateLoginUrl = getCustomLoginRedirectUrl(appCode);
+	            logoImgUrl = getAppLogoUrl(appCode);
+	            alternateLoginUrl = getCustomLoginRedirectUrl(appCode);
+	            forgotPwdUrl = getForgotPwdUrl(appCode);
             } catch(exptn) {}
             
             if (!logoImgUrl || logoImgUrl === '') {
@@ -75,6 +77,11 @@ angular.module('stormpathIdpApp')
             	alternateLoginUrl = 'https://insight.equilar.com/app/login/login2.jsp';
             }
             $rootScope.alternateLoginUrl = alternateLoginUrl;
+
+            if (!forgotPwdUrl || forgotPwdUrl === '') {
+              forgotPwdUrl = 'https://account.equilar.com/reset';
+            }
+            $rootScope.forgotPwdUrl = forgotPwdUrl;
             
             var frameType = getInfoFrameType(appCode);
             if (!frameType) {
