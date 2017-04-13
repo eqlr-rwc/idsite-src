@@ -1,6 +1,6 @@
 
 	var componentInfo = [];
- // componentInfo[ 'HASH'] = ['NAME', 'ENV', 'URL', 'LOGO', 'INFO_FRAME' ],
+ // componentInfo[  'HASH'  ] = ['NAME', 'ENV', 'URL', 'LOGO', 'INFO_FRAME' ],
     componentInfo['3luD8Rvh'] = ['BEUA QA', 'qa', 'https://qa-beua-o2p.equilar.com', '', ''];
     componentInfo['46yW5Us4'] = ['BEUA STAGE', 'stage', 'https://stage-o2p-beua.equilar.com', '', ''];
     componentInfo['4NcuZtp9'] = ['BEUA PROD', 'prod', 'https://beua.equilar.com', '', ''];
@@ -14,6 +14,9 @@
     componentInfo['1QNUk4n1'] = ['Survey QA', 'qa', 'https://qa-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1iMAt9oB'] = ['Survey STAGE', 'stage', 'https://stage-survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
     componentInfo['1vjiV2cZ'] = ['Survey PROD', 'prod', 'https://survey.equilar.com', 'images/logo-survey.svg', 'insight-frame'];
+    componentInfo['703Wo6lA'] = ['Engage QA', 'qa', 'https://qa-engage.equilar.com', 'images/logo-engage.png', ''];
+    componentInfo['3jPebf23'] = ['Engage STAGE', 'stage', 'https://stage-engage.equilar.com', 'images/logo-engage.png', ''];
+    componentInfo['4XbyGOX2'] = ['Engage PROD', 'prod', 'https://engage.equilar.com', 'images/logo-engage.png', ''];
     
     function getCustomLoginRedirectUrl(code) {
     	if (!code) {
@@ -46,15 +49,21 @@
 
       var key = code.substring(0, 8);
       var env = getEnvironment(key);
+      var name = getAppName(key);
+      var suffix = '';
+
+      if (name.startsWith("Engage")) {
+        suffix = '?isEngage=T';
+      }
 
       if (env === 'qa' ) {
-        return 'https://qa-account.equilar.com/reset';
+        return 'https://qa-account.equilar.com/reset' + suffix;
       }
       if (env === 'stage' ) {
-        return 'https://stage-account.equilar.com/reset';
+        return 'https://stage-account.equilar.com/reset' + suffix;
       }
       if (env === 'prod' ) {
-        return 'https://account.equilar.com/reset';
+        return 'https://account.equilar.com/reset' + suffix;
       }
 
     return null;
